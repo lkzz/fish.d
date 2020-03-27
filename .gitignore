@@ -1,0 +1,10 @@
+.DS_Store
+
+fish_variables
+fishd.*
+functions/auth_code.fish
+functions/jumper.fish
+functions/fish_prompt.fish
+
+conf.d/
+completions/
