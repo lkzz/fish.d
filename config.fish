@@ -40,6 +40,9 @@ alias grm="git rebase -i master"
 alias fishconfig="vim $HOME/.config/fish/config.fish"
 alias rm="rmtrash"
 
+# cmake alias
+alias cmake="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
+
 #default fish keybinds
 fish_default_key_bindings
 
