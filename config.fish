@@ -3,10 +3,10 @@ set -gx EDITOR "vim"
 set -x TERM "xterm-256color"
 
 # go env
-set -gx GOROOT $HOME/Workspace/golang/root/go1.13.7
-set -gx GOBIN $HOME/Workspace/golang/bin
+set -gx GOROOT $HOME/Workspace/golang/root/go
+set -gx GOBIN $GOROOT/bin
 set -gx GOPATH $HOME/Workspace/golang/path
-set -gx PATH $PATH $GOROOT/bin $GOPATH $GOBIN
+set -gx PATH $PATH $GOPATH $GOBIN
 set -gx GO111MODULE on
 set -gx GOSUMDB off
 set -gx CGO_ENABLED 0
