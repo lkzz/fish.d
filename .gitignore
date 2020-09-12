@@ -5,6 +5,7 @@ fishd.*
 functions/auth_code.fish
 functions/jumper.fish
 functions/fish_prompt.fish
+functions/env*
 
 conf.d/
 completions/
