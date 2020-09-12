@@ -1,0 +1,13 @@
+# 不用在提示符前换行
+add_newline = false
+
+# 将提示符标志由“❯”换成“➜”
+[character]      # 正在配置的组件名称是“character”
+symbol = "➜"     # “symbol”字段被设置为 "➜"
+error_symbol = "✗" # 如果上一条命令失败，提示符中在输入文本之前显示的符号
+use_symbol_for_status = true # 指示是否改变显示符号来指出错误状态
+
+[directory]
+truncation_length = 3           # 当前目录路径被截断后最多保留的父目录数量
+truncate_to_repo = false        # 是否只截断到您当前处于的 git 仓库根目录下
+fish_style_pwd_dir_length = 2

@@ -12,6 +12,9 @@ set -gx GOSUMDB off
 set -gx CGO_ENABLED 0
 set -gx GOPROXY "https://goproxy.cn"
 
+# rust env
+set -gx PATH $PATH $HOME/.cargo/bin
+
 # go alias
 alias lgo="env GOOS=linux GOARCH=amd64 go"
 alias gta="go test (go list ./... | grep -v /vendor/)"
@@ -46,21 +49,5 @@ alias cmake="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
 #default fish keybinds
 fish_default_key_bindings
 
-#omf install spacefish
-set SPACEFISH_DIR_TRUNC 4
-set SPACEFISH_DIR_TRUNC_REPO false
-set SPACEFISH_EXIT_CODE_SHOW true
-set SPACEFISH_EXIT_CODE_SYMBOL "✘ "
-set SPACEFISH_EXEC_TIME_ELAPSED 1
-set SPACEFISH_JOBS_AMOUNT_THRESHOLD 0
-set SPACEFISH_VI_MODE_INSERT "❯"
-set SPACEFISH_VI_MODE_NORMAL "❮"
-set SPACEFISH_VI_MODE_VISUAL "V"
-set SPACEFISH_VI_MODE_REPLACE_ONE "^"
-set SPACEFISH_PROMPT_ORDER user host dir vi_mode char
-set SPACEFISH_RPROMPT_ORDER git jobs aws exec_time exit_code
-set SPACEFISH_PROMPT_PREFIXES_SHOW false
-set SPACEFISH_PROMPT_ADD_NEWLINE false
-set SPACEFISH_PROMPT_SEPARATE_LINE false
-set SPACEFISH_TIME_SHOW true
-set ASK_DEFAULT_DEVICE_LOCALE "en-US"
+set -x STARSHIP_CONFIG ~/.config/fish/starship.toml
+starship init fish | source
