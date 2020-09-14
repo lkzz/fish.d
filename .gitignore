@@ -2,10 +2,13 @@
 
 fish_variables
 fishd.*
+
 functions/auth_code.fish
 functions/jumper.fish
 functions/fish_prompt.fish
 functions/env*
+
+alias/aws.fish
 
 conf.d/
 completions/

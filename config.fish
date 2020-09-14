@@ -15,6 +15,9 @@ set -gx GOPROXY "https://goproxy.cn"
 # rust env
 set -gx PATH $PATH $HOME/.cargo/bin
 
+# brew
+set -gx HOMEBREW_BOTTLE_DOMAIN "https://mirrors.aliyun.com/homebrew/homebrew-bottles"
+
 # go alias
 alias lgo="env GOOS=linux GOARCH=amd64 go"
 alias gta="go test (go list ./... | grep -v /vendor/)"
@@ -45,6 +48,9 @@ alias rm="rmtrash"
 
 # cmake alias
 alias cmake="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
+
+# aws alias
+source ~/.config/fish/alias/aws.fish
 
 #default fish keybinds
 fish_default_key_bindings
