@@ -3,10 +3,10 @@ set -gx EDITOR "vim"
 set -x TERM "xterm-256color"
 
 # go env
-set -gx GOROOT $HOME/Workspace/golang/root/go
-set -gx GOBIN $GOROOT/bin
-set -gx GOPATH $HOME/Workspace/golang/path
-set -gx PATH $PATH $GOPATH $GOBIN
+set -gx GOROOT $HOME/Workspace/thridparty/go
+set -gx GOPATH $HOME/Workspace/bilibili/golang
+set -gx GOBIN $GOPATH/bin
+set -gx PATH $PATH $GOBIN $GOROOT/bin
 set -gx GO111MODULE on
 set -gx GOSUMDB off
 set -gx CGO_ENABLED 0
@@ -14,9 +14,6 @@ set -gx GOPROXY "https://goproxy.cn"
 
 # rust env
 set -gx PATH $PATH $HOME/.cargo/bin
-
-# brew
-set -gx HOMEBREW_BOTTLE_DOMAIN "https://mirrors.aliyun.com/homebrew/homebrew-bottles"
 
 # go alias
 alias lgo="env GOOS=linux GOARCH=amd64 go"
@@ -38,7 +35,7 @@ alias gba="git branch -a"
 alias gbd="git branch -D"
 alias gfp="git fetch -p"
 alias gst="git status"
-alias gcl="git config --local user.name 'Kevin Leung'; git config --local user.email 'kevin.scnu@gmail.com'"
+alias gcl="git config --local user.name 'liangkai'; git config --local user.email 'kevin.scnu@gmail.com'"
 alias grc="git rebase --continue"
 alias grm="git rebase -i master"
 
@@ -55,5 +52,13 @@ source ~/.config/fish/alias/aws.fish
 #default fish keybinds
 fish_default_key_bindings
 
+# brew install starship
 set -x STARSHIP_CONFIG ~/.config/fish/starship.toml
 starship init fish | source
+
+# brew install direnv
+eval (direnv hook fish)
+
+# Receive notifications when long processes finish: https://github.com/franciscolourenco/done.
+# Dependencies: brew install terminal-notifier
+set -U __done_min_cmd_duration 30000 # default: 5000 ms
