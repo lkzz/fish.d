@@ -1,5 +1,5 @@
 set -gx LC_ALL en_US.UTF-8
-set -gx EDITOR "vim"
+set -gx EDITOR 'emacsclient -t -q -a ""'
 set -x TERM "xterm-256color"
 
 # go env
@@ -20,8 +20,7 @@ alias lgo="env GOOS=linux GOARCH=amd64 go"
 alias gta="go test (go list ./... | grep -v /vendor/)"
 
 # emacs alias
-alias e='emacsclient -nw'
-alias ec='emacsclient -t -q -a ""'
+alias e='emacsclient -t -q -a ""'
 
 # git alias
 alias gco="git checkout"
